@@ -60,7 +60,7 @@ To print a job ticket with every entered job follow these steps:
 
 Now when you launch a job you will have the option to print the ticket.
 
-Go to [System Settings](#systemsettings) for further details.
+Go to [System Settings](system-settings#systemsettings) for further details.
 
 - - - 
 
@@ -78,7 +78,7 @@ This will then have deleted the old inovice and re-produced a new one.
 
 >**Remember**
 >
-> A job/invoice that is over 3 months old, been exported, or had a payment allocated against it will not be able to be reversed. If this is the case you will need to produce a [Credit Note](#CreditNote). 
+> A job/invoice that is over 3 months old, been exported, or had a payment allocated against it will not be able to be reversed. If this is the case you will need to produce a [Credit Note](payment-entry#paymententry). 
 {: .alert.alert-info}
 
 - - - 
@@ -136,13 +136,13 @@ I the **Data Integrity Check** is showing jobs while running your End of Month t
 
 #### How do i export Invoices?
 
-To Export invoices please follow the steps [Here](#export).
+To Export invoices please follow the steps [Here](invoicing-statements#invoiceexport).
 
 - - -
 
 #### How do i add a Payment or Credit Note?
 
-To add a **Payment** or **Credit Notes** please follow the steps here [Payment Entry](#paymententry).
+To add a **Payment** or **Credit Notes** please follow the steps here [Payment Entry](payment-entry#paymententry).
 
 - - - 
 
@@ -154,7 +154,7 @@ To add a **Payment** or **Credit Notes** please follow the steps here [Payment E
 
 #### How do i Reverse a Payment or Credit Note?
 
-To reverse a **Payment** or **Credit Note** please follow the steps here [Reverse a Payment](#reversepayment).
+To reverse a **Payment** or **Credit Note** please follow the steps here [Reverse a Payment](payment-entry#reversepayment).
 
 - - -
 
@@ -166,13 +166,13 @@ To reverse a **Payment** or **Credit Note** please follow the steps here [Revers
 
 #### How do i add a new Labtrac user?
 
-To add a new user log in for Labtrac please follow the steps here [User Manager](#usermanager)
+To add a new user log in for Labtrac please follow the steps here [User Manager](system-settings#usermanager)
 
 - - -
 
 #### How do i add a new Labtrac Online user?
 
-To add a new user log in for Labtrac Online please follow the steps here [Labtrac Online](#online)
+To add a new user log in for Labtrac Online please follow the steps here [Labtrac Online](online)
 
 - - - 
 

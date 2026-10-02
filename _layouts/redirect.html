@@ -1,0 +1,16 @@
+<!doctype html>
+{%- assign redirect_target = page.redirect | default: "/documentation/" | relative_url %}
+<html lang="{{ site.lang | default: 'en' }}">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{ site.title }}</title>
+    <meta name="robots" content="noindex">
+    <link rel="canonical" href="{{ redirect_target }}">
+    <meta http-equiv="refresh" content="0; url={{ redirect_target }}">
+    <script>location.replace({{ redirect_target | jsonify }} + location.hash);</script>
+  </head>
+  <body>
+    {{ content }}
+  </body>
+</html>

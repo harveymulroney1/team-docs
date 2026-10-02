@@ -1,0 +1,38 @@
+<header class="site-header" id="top">
+  <div class="header-inner">
+    <button class="icon-button sidebar-toggle" type="button" aria-controls="site-sidebar" aria-expanded="false" data-sidebar-toggle>
+      {% include icon.html name="menu" %}<span class="visually-hidden">Open menu</span>
+    </button>
+
+    <a class="brand" href="{{ '/documentation/' | relative_url }}">
+      <img class="brand-logo" src="{{ '/images/labtrac-logo.png' | relative_url }}" alt="Labtrac" width="96" height="28">
+      <span class="brand-divider" aria-hidden="true"></span>
+      <span class="brand-title">Documentation</span>
+    </a>
+
+    <div class="site-search" role="search" data-search>
+      <div class="search-field">
+        <label class="visually-hidden" for="site-search-input">Search the documentation</label>
+        <span class="search-icon">{% include icon.html name="search" %}</span>
+        <input id="site-search-input" class="search-input" type="search" placeholder="Search the docs…"
+               autocomplete="off" spellcheck="false" enterkeyhint="search"
+               role="combobox" aria-expanded="false" aria-controls="site-search-results" aria-autocomplete="list"
+               data-search-index="{{ '/search.json' | relative_url }}">
+        <kbd class="search-kbd" aria-hidden="true">/</kbd>
+      </div>
+      <div class="search-panel" id="site-search-results" role="listbox" aria-label="Search results" hidden></div>
+    </div>
+
+    <nav class="header-links" aria-label="Labtrac">
+      {% include menu.html %}
+    </nav>
+
+    <button class="icon-button search-toggle" type="button" aria-label="Search" data-search-toggle>
+      {% include icon.html name="search" %}
+    </button>
+    <button class="icon-button theme-toggle" type="button" aria-label="Switch between light and dark mode" data-theme-toggle>
+      <span class="theme-icon-light">{% include icon.html name="moon" %}</span>
+      <span class="theme-icon-dark">{% include icon.html name="sun" %}</span>
+    </button>
+  </div>
+</header>

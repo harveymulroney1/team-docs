@@ -1,0 +1,39 @@
+# Site settings — GitHub Pages reads this file automatically.
+# On GitHub Pages, `url` and `baseurl` are filled in for you, so they are
+# deliberately left unset here.
+name: test-documentation
+title: Labtrac Documentation
+description: Guides for setting up and running Labtrac, from first install to day-to-day use.
+lang: en-GB
+
+markdown: kramdown
+kramdown:
+  input: GFM
+  hard_wrap: false
+  auto_ids: true
+
+# Support details shown in the header, sidebar and footer.
+support:
+  phone: "+44 3333 449 970"
+  phone_link: "+443333449970"
+  email: support@labtrac.com
+  hours:
+    - "Mon–Thu 9:00–17:30"
+    - "Fri 9:00–17:00"
+  website: https://www.labtrac.com
+
+# Every page in /documentation uses the documentation layout unless it says otherwise.
+defaults:
+  - scope:
+      path: documentation
+    values:
+      layout: article
+
+# Files that are not part of the published site.
+exclude:
+  - README.md
+  - params.json
+  - Gemfile
+  - Gemfile.lock
+  - vendor
+  - node_modules

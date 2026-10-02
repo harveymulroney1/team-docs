@@ -48,7 +48,7 @@ Now with a brand new layout to make adding jobs quicker and easier.
 
 **Product/Material Search** means you no longer have to remember **Product/Material** codes. You can now search through your entire inventory.
 
-**Product Discount** now gives you the option to discount single products on a job. For more on this see [Discounts](#discount)
+**Product Discount** now gives you the option to discount single products on a job. For more on this see [Discounts](faqs#how-do-i-add-a-discount)
 
 **View Online** gives you a direct link to the job on your online system.
 
@@ -56,7 +56,7 @@ Now with a brand new layout to make adding jobs quicker and easier.
 
 **Reverse Invoice** allows you to reverse a completed job and make changes directly from the job screen.
 
-For more please see <a href="setup-new#addingjobs">Adding a Job</a>
+For more please see <a href="setup#addingjobs">Adding a Job</a>
 
 - - -
 
@@ -66,9 +66,9 @@ For more please see <a href="setup-new#addingjobs">Adding a Job</a>
 
 Both **Product** and **Material** entry screens have been improved to speed up workflow.
 
-For more on **Adding a Product** see <a href="setup-new#addingproducts">Adding Products</a>
+For more on **Adding a Product** see <a href="setup#addingproducts">Adding Products</a>
 
-For more on **Adding Materials** see <a href="setup-new#addingmaterials">Adding Materials</a>
+For more on **Adding Materials** see <a href="setup#addingmaterials">Adding Materials</a>
 
 - - -
 

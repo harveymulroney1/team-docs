@@ -1,20 +1,24 @@
-<nav class="breadcrumb" role="menubar" aria-label="breadcrumbs">
-
- <a href="{{ site.url }}{{ site.baseurl }}">Home</a>
-
- {% assign crumbs = page.url | split: '/' %}
-
-   {% for crumb in crumbs offset: 1 %}
-
-    {% if forloop.last %}
-
-        <span> // <span><a class="current">{{ page.title }}</a>
-
-    {% else %}
-
-        <span> // <span><a href="{{ site.url }}{{ site.baseurl }}{% assign crumb_limit = forloop.index | plus: 1 %}{% for crumb in crumbs limit: crumb_limit %}{{ crumb | append: '/' }}{% endfor %}">{{ crumb | replace:'-',' ' | capitalize }} </a>
-    {% endif %}
-
-  {% endfor %}
-
+{%- assign crumb_group = nil -%}
+{%- assign crumb_title = nil -%}
+{%- for group in site.data.navigation -%}
+  {%- for item in group.items -%}
+    {%- if item.url == page.url -%}
+      {%- assign crumb_group = group.group -%}
+      {%- assign crumb_title = item.title -%}
+    {%- endif -%}
+  {%- endfor -%}
+{%- endfor -%}
+{%- assign crumb_title = crumb_title | default: page.title -%}
+{%- if page.url != "/documentation/" %}
+<nav class="breadcrumbs" aria-label="Breadcrumb">
+  <ol>
+    <li><a href="{{ '/documentation/' | relative_url }}">Docs</a></li>
+    {%- if crumb_group %}
+    <li><span>{{ crumb_group }}</span></li>
+    {%- endif %}
+    {%- if crumb_title %}
+    <li><span aria-current="page">{{ crumb_title }}</span></li>
+    {%- endif %}
+  </ol>
 </nav>
+{%- endif %}

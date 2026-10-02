@@ -13,7 +13,7 @@ markdownpage: true
 - - -
 
 <video width="720" height="400" controls>
-<source src="https://labtracdownloads.blob.core.windows.net/media/documentation%20videos/adding%20a%dentist%20(export%203).m4v" type="video/mp4">
+<source src="https://labtracdownloads.blob.core.windows.net/media/documentation%20videos/adding%20a%20dentist%20(export%203).mp4" type="video/mp4">
 </video>{: .center-block}
 
 - - -
@@ -53,7 +53,7 @@ markdownpage: true
 - - - 
 
 <video width="720" height="400" controls>
-<source src="https://labtracdownloads.blob.core.windows.net/media/documentation%20videos/stage%20work%20(export%203).m4v">
+<source src="https://labtracdownloads.blob.core.windows.net/media/documentation%20videos/stagework.m4v">
 </video>{: .center-block}
 
 - - - 

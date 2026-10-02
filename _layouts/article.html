@@ -1,11 +1,33 @@
 ---
 layout: default
 ---
-<div class="row">
-  <div class="col-sm-2">
-    {% include left-menu.html %}
+<div class="doc-layout">
+  <div class="doc-column">
+    {% include breadcrumbs.html %}
+
+    <details class="toc-inline" data-toc-inline hidden>
+      <summary>On this page</summary>
+      <nav aria-label="On this page"><ol class="toc-list" data-toc-list></ol></nav>
+    </details>
+
+    <article class="doc" data-doc>
+      {%- comment -%}
+        The pages use standalone <a name="..."> lines as link targets. Tag the
+        paragraphs that only hold those anchors so they don't add blank space.
+      {%- endcomment %}
+      {{ content
+        | replace: '<p><a class="offset" name=', '<p class="anchor-p"><a class="offset" name='
+        | replace: '<p><a name=', '<p class="anchor-p"><a name='
+        | replace: '<p><a href="" name=', '<p class="anchor-p"><a href="" name=' }}
+    </article>
+
+    {% include page-nav.html %}
   </div>
-  <div class="col-sm-10">
-    {{content}}
-  </div>
+
+  <aside class="doc-toc" aria-label="On this page" data-toc hidden>
+    <div class="doc-toc-inner">
+      <p class="toc-title">On this page</p>
+      <nav><ol class="toc-list" data-toc-list></ol></nav>
+    </div>
+  </aside>
 </div>

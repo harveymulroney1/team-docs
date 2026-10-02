@@ -21,6 +21,7 @@ If you wish to add personlised users go to <a href="system-settings#usermanager"
 ---
 
 ![Sign In](https://labtracdownloads.blob.core.windows.net/media/documentation%20videos/documentation%20images/signin.PNG "Sign In"){: .center-block.img-responsive}
+
 ---
 
 <a class="offset" name="yourdata"></a>
@@ -101,7 +102,7 @@ When setting up product codes in Labtrac there are a few things to bear in mind;
 
 To add a new Dentist, click **Dentist** in the contents bar then **Add F2** at the top of the Labtrac screen. 
 
-In the new window enter a **Dentist Code** and **Dentist Name**. To see our recommended coding system please see [Product Codes](#ProductCodes).
+In the new window enter a **Dentist Code** and **Dentist Name**. To see our recommended coding system please see [Product Codes](#productcodes).
 
 - - -
 
@@ -129,7 +130,7 @@ The first check box is **Invoiced** if the dentist is selected as the principal 
 If invoiced is NOT selected - The principal handles the associates invoices. The principal handles and pays the associate’s invoices.
 {: .alert.alert-info}
 
-The next thing to look at is <a href="setup#pricelists">Price Lists</a> and <a href="setup#volumediscount">Volume Discount</a> make sure the dentist is selected on the correct list or discount.
+The next thing to look at is <a href="setup#pricelists">Price Lists</a> and <a href="setup#financial">Volume Discount</a> make sure the dentist is selected on the correct list or discount.
 
 ---
 
