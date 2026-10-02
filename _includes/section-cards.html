@@ -1,0 +1,9 @@
+<div class="topic-cards" data-search-skip>
+{%- for group in site.data.navigation -%}
+{%- for item in group.items -%}
+{%- if item.url != page.url %}
+<a class="topic-card" href="{{ item.url | relative_url }}"><span class="topic-icon">{% include icon.html name=item.icon %}</span><span class="topic-text"><span class="topic-title">{{ item.title }}</span><span class="topic-desc">{{ item.description }}</span></span></a>
+{%- endif -%}
+{%- endfor -%}
+{%- endfor %}
+</div>

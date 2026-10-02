@@ -1,199 +1,51 @@
 <!doctype html>
-<html>
+{%- assign nav_description = nil -%}
+{%- for group in site.data.navigation -%}
+  {%- for item in group.items -%}
+    {%- if item.url == page.url -%}{%- assign nav_description = item.description -%}{%- endif -%}
+  {%- endfor -%}
+{%- endfor %}
+<html lang="{{ site.lang | default: 'en' }}">
   <head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <link rel="SHORTCUT ICON" href="../images/favicon.ico">
-   
-    <link rel="stylesheet" type="text/css" media="screen" href="https://www.labtrac.com/content/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" media="screen" href="https://www.labtrac.com/content/font-awesome.min.css">
-    <link rel="stylesheet" type="text/css" media="screen" href="https://www.labtrac.com/content/styles.css">
-    <link rel="stylesheet" type="text/css" media="screen" href="https://www.labtrac.com/content/spacing.css">
-    <link rel="stylesheet" type="text/css" media="screen" href="{{ '/stylesheets/font-awesome.min.css' | relative_url }}">
-    <link rel="stylesheet" type="text/css" media="screen" href="{{ '/stylesheets/docs.css' | relative_url }}">
-
-    <title>{{page.title}}</title>
-    <style>
-    body {
-      padding-top:125px;
-    }
-    .offset:before {
-      content:" ";
-      display:block;
-      height:90px; /* fixed header height*/
-      margin:-90px 0 0; /* negative fixed header height */
-      }
-    h1 {margin-top:0 !important;}
-    ul.list-unstyled li a.collapsed i {transform: rotate(90deg);}
-    ul.list-unstyled li a i {transition:0.5s; will-change: transform; margin-right:5px;}
-    ul ul[id] {list-style-type:disc;padding-left:10px;}
-    #header input {width:100%;border:1px inset #777;border-radius:5px; padding:5px;margin:9px 0;outline:none;} 
-    #contents a[data-toggle] {position: absolute; left:0;}
-    .list-unstyled {padding-left:20px;}
-    .list-unstyled > li:after {
-      content: "";
-      display: block;
-      height: 1px;
-      background-color: #ddd;
-      margin: 3px 0 3px -20px;
-      }
-      .list-unstyled > li:first-of-type:before {
-        content: "";
-        display: block;
-        height: 1px;
-        background-color: #ddd;
-        margin: 3px 0 3px -20px;
-      }
-
-      .breadcrumb {
-        margin: 0;
-        line-height:normal;
-        border-radius:0;
-      }
-
-      .container {
-        min-height:70vh;
-      }
-      .fixer {
-        position: fixed;
-        height:80vh;
-        overflow-y :auto;
-      }
-
-      @media (max-width: 767px) {
-    .fixer   {
-        position:static;
-        height: auto;
-    }
-    #contents a[data-toggle] {
-      left:15px;
-    }
-      }
-
-      @media (min-width: 768px) and (max-width:991px) {
-         .fixer   {
-        width:120px;
-        margin: 0 -20px;
-    }
-      }
-
-      @media (min-width: 992px) and (max-width:1199px) {
-          .fixer   {
-        width:155px;
-    }
-      }
-
-      @media (min-width: 1200px) {
-          .fixer   {
-        width:185px;
-    }
-      }
-    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% if page.title and page.title != site.title %}{{ page.title }} · {% endif %}{{ site.title }}</title>
+    <meta name="description" content="{{ page.description | default: nav_description | default: site.description | strip_html | normalize_whitespace | escape }}">
+    <meta name="theme-color" content="#252930">
+    <link rel="icon" href="{{ '/images/favicon.ico' | relative_url }}">
+    <link rel="preload" href="{{ '/fonts/dm-sans-latin.woff2' | relative_url }}" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="{{ '/stylesheets/docs.css' | relative_url }}">
+    <script>
+      // Apply the saved light/dark choice before the page paints.
+      try { var t = localStorage.getItem('docs-theme'); if (t) document.documentElement.setAttribute('data-theme', t); } catch (e) {}
+      document.documentElement.classList.add('js');
+    </script>
   </head>
   <body>
-     <header class="navbar navbar-inverse navbar-fixed-top hidden-print" role="navigation">
-      <div class="" style="margin-left:4%;margin-right:4%;">
-        <div class="navbar-header">
-            <!-- .navbar-toggle is used as the toggle for collapsed navbar content -->
-            
-            
-            <a class="navbar-brand" href="https://www.labtrac.com">
-                <span>Labtrac</span></a>
-            <ul class="list-inline pull-right visible-xs">
-               <li>
-                    <a class="navbar-toggle2" data-toggle="collapse" data-target=".navbar-responsive-collapse">
-                        <span class="sr-only">Toggle navigation</span>
-                        <i class="fa fa-fw fa-bars" style=""></i> Menu
-                    </a>
-                </li>
-            </ul>
-        </div>
-         <div class="collapse navbar-collapse navbar-responsive-collapse">
-            <ul class="nav navbar-nav pull-right">
-              {% include menu.html %}
-            </ul>
-        </div>
+    <a class="skip-link" href="#main-content">Skip to content</a>
+    {% include header.html %}
+    <div class="site-layout">
+      {% include left-menu.html %}
+      <div class="site-content">
+        <main id="main-content" class="site-main" tabindex="-1">
+          {{ content }}
+        </main>
+        {% include footer.html %}
       </div>
-      {% include breadcrumbs.html %}
-      </header> 
-      <div class="container">
-     {{ content }}
-     </div>
-      <footer>
-        <div class="container margin_bottom_30" style="min-height: 30px;">
-          <hr />
-          <nav class="pull-right">
-            <ul class="list-inline">
-                <li><a href="https://www.labtrac.com/en/Company">Contact Us</a></li>
-                <!--<li><a href="http://www.cirrux.com" target="_blank" title="Design by Cirrux">Design by Cirrux</a></li>-->
-            </ul>
-        </nav>
-        <p>© 2017 Labtrac Solutions Limited</p>
     </div>
-      </footer>
-    <script src="https://www.labtrac.com/Scripts/jquery-2.1.3.min.js"></script>
-  <script src="https://www.labtrac.com/Scripts/bootstrap.min.js"></script>
 
-  <script>
-    (function ($) {
-  // custom css expression for a case-insensitive contains()
-  jQuery.expr[':'].Contains = function(a,i,m){
-      return (a.textContent || a.innerText || "").toUpperCase().indexOf(m[3].toUpperCase())>=0;
-  };
+    <button class="back-to-top" type="button" aria-label="Back to top" data-back-to-top hidden>
+      {% include icon.html name="arrow-up" %}
+    </button>
 
+    <div class="lightbox" role="dialog" aria-modal="true" aria-label="Enlarged screenshot" data-lightbox hidden>
+      <button class="icon-button lightbox-close" type="button" aria-label="Close" data-lightbox-close>{% include icon.html name="close" %}</button>
+      <figure class="lightbox-figure">
+        <img alt="" data-lightbox-img>
+        <figcaption data-lightbox-caption></figcaption>
+      </figure>
+    </div>
 
-  function listFilter(header, list) { // header is any element, list is an unordered list
-    // create and add the filter form to the header
-    var form = $("<form>").attr({"class":"filterform","action":"#"}),
-        input = $("<input>").attr({"class":"filterinput","type":"search","placeholder":"Search..."});
-    $(form).append(input).appendTo(header);
-
-    $(input)
-      .change( function () {
-        var filter = $(this).val();
-        $(list).children().detach(".noresult")
-        if(filter || filter.length > 0) {
-          // this finds all links in a list that contain the input,
-          // and hide the ones not containing the input while showing the ones that do
-          $(list).find("li:not(:Contains(" + filter + "))").hide()
-          var count = $(list).find("li:Contains(" + filter + ")").show().length;
-            if (count > 0){
-            $(list).find("li:Contains(" + filter + ")").parent('.collapse').collapse('show').siblings("[data-toggle]").removeClass("collapsed");}
-            else { 
-              $(list).append("<p class='noresult'>No Results</p>")
-            }     
-        } else {
-          $(list).find("li").show();
-          $(list).find(".collapse").collapse('hide').siblings("[data-toggle]").addClass("collapsed");
-        };
-        return false;
-      })
-    .keyup( function () {
-        // fire the above change event after every letter
-        $(this).change();
-
-    });
-  }
-  //ondomready
-  $(function () {
-    listFilter($("#header"), $("#contents"));
-    //smooth scrolling with jquery
-     $('a[href*="#"]:not([href^="#"])').click(function() {
-    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
-      var target = $(this.hash);
-      target = target.length ? target : $('[name="' + this.hash.slice(1) +'"]');
-      if (target.length) {
-        $('html, body').animate({
-          scrollTop: target.offset().top
-        }, 1000);
-        return false;
-      }
-    }
-  });
-
-  });
-}(jQuery));
-
-  </script>
+    <script src="{{ '/javascripts/docs.js' | relative_url }}" defer></script>
   </body>
 </html>

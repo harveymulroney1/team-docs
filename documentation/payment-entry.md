@@ -75,7 +75,7 @@ To reverse a payment:
 
 ---
 
-![Reverse a Payment](https://labtracdownloads.blob.core.windows.net/media/documentation%20videos/documentation%20images/pe_5.PNG "Reverse Payment"){: .center-block.img-responsive}
+![Reverse a Payment](../images/pe_5.PNG "Reverse Payment"){: .center-block.img-responsive}
 
 ---
 

@@ -1,0 +1,33 @@
+{%- comment -%} Previous / next links, following the order in _data/navigation.yml {%- endcomment -%}
+{%- assign pn_urls = "" -%}
+{%- assign pn_titles = "" -%}
+{%- for group in site.data.navigation -%}
+  {%- for item in group.items -%}
+    {%- assign pn_urls = pn_urls | append: item.url | append: "||" -%}
+    {%- assign pn_titles = pn_titles | append: item.title | append: "||" -%}
+  {%- endfor -%}
+{%- endfor -%}
+{%- assign pn_urls = pn_urls | split: "||" -%}
+{%- assign pn_titles = pn_titles | split: "||" -%}
+{%- assign pn_current = nil -%}
+{%- for url in pn_urls -%}
+  {%- if url == page.url -%}{%- assign pn_current = forloop.index0 -%}{%- endif -%}
+{%- endfor -%}
+{%- if pn_current != nil -%}
+  {%- assign pn_prev = pn_current | minus: 1 -%}
+  {%- assign pn_next = pn_current | plus: 1 %}
+<nav class="page-nav" aria-label="Previous and next pages">
+  {%- if pn_current > 0 %}
+  <a class="page-nav-link page-nav-prev" href="{{ pn_urls[pn_prev] | relative_url }}" rel="prev">
+    <span class="page-nav-label">{% include icon.html name="chevron-left" %}Previous</span>
+    <span class="page-nav-title">{{ pn_titles[pn_prev] }}</span>
+  </a>
+  {%- endif %}
+  {%- if pn_next < pn_urls.size %}
+  <a class="page-nav-link page-nav-next" href="{{ pn_urls[pn_next] | relative_url }}" rel="next">
+    <span class="page-nav-label">Next{% include icon.html name="chevron-right" %}</span>
+    <span class="page-nav-title">{{ pn_titles[pn_next] }}</span>
+  </a>
+  {%- endif %}
+</nav>
+{%- endif -%}

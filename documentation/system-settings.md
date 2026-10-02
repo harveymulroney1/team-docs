@@ -17,13 +17,13 @@ System settings are used to customise the way Labtrac will work for you. This se
 
 In the new window there will be 7 tabs.
 
-+ [Lab Details](#LabDetails)
-+ [System Options](#SystemOptions)
-+ [Dentist](#Dentist)
-+ [Financial](#Financial)
-+ [Order Enclosures](#OrderEnclosures)
-+ [Footnotes](#Footnotes)
-+ [Custom Reports](#CustomReports)
++ [Lab Details](#labdetails)
++ [System Options](#systemoptions)
++ [Dentist](#dentist)
++ [Financial](#financial)
++ [Order Enclosures](#orderenclosures)
++ [Footnotes](#footnotes)
++ [Custom Reports](#customreports)
 
 - - -
 
@@ -78,7 +78,7 @@ The options are;
 
 - *Print Invoice on A5 Paper* - Using this you can to print on A5 paper rather than the default A4.
 
-- *Export to External Accounts* - Select here if you wish to export your invoices to an external accounts package. Sage, Xero and Quickbooks Online are currently supported, if you have another accounts system that you would like integrated please contact <a href="welcome#labtracsupport">Labtrac Support</a>
+- *Export to External Accounts* - Select here if you wish to export your invoices to an external accounts package. Sage, Xero and Quickbooks Online are currently supported, if you have another accounts system that you would like integrated please contact <a href="./#labtracsupport">Labtrac Support</a>
 
 - - - 
 
@@ -236,7 +236,7 @@ Enter any information that you would like to be included in the footnotes of a d
 
 ---
 
-Custom Reports gives you an alternative version of anyone of our reports. We recommend speaking to <a href="welcome#labtracsupport">Labtrac Support</a> before using these.
+Custom Reports gives you an alternative version of anyone of our reports. We recommend speaking to <a href="./#labtracsupport">Labtrac Support</a> before using these.
 
 - - -
 

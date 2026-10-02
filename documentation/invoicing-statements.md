@@ -41,7 +41,8 @@ To produce your statements please follow these steps:
 
 >**Remember**
 >
-> If you used consolidated invoicing **Grouped** will just show the monthly value for each consolidated invoice. **Itemised** will show a line for each job.{: .alert.alert-info}
+> If you used consolidated invoicing **Grouped** will just show the monthly value for each consolidated invoice. **Itemised** will show a line for each job.
+{: .alert.alert-info}
 
 * Apply a **Dentist Filter** *if required*
 
@@ -110,7 +111,7 @@ To run your end of month tasks for consolidated invoices please follow these ste
 
 * Make sure the correct month is selected in the dropdown menu
 
-* Click **Data Integrity Check** *(this will make sure there have been no errors during the month)*. This will produce 3 reports all of which should be blank. If they are not blank please contact <a href="welcome#labtracsupport">Labtrac Support</a>
+* Click **Data Integrity Check** *(this will make sure there have been no errors during the month)*. This will produce 3 reports all of which should be blank. If they are not blank please contact <a href="./#labtracsupport">Labtrac Support</a>
 
 * Click **Prepare**. This will start consolidating all of your invoices for the month. *If you have a lot of invoices for the month this process may take a few minutes.*
 
@@ -153,7 +154,7 @@ To Email Invoices, Statments, Patient Statments or Delivery Notes:
 
 + This will produce a report which should say *X invoices sent succesfully*.
 
-+ If you have any issues when sending emails please contact <a href="welcome#labtracsupport">Labtrac Support</a>.
++ If you have any issues when sending emails please contact <a href="./#labtracsupport">Labtrac Support</a>.
 
 <a class="offset" name="mydentist"></a>
 ### MyDentist Invoicing

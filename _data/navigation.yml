@@ -1,0 +1,130 @@
+# Documentation navigation.
+#
+# This one file drives the sidebar, breadcrumbs, previous/next links,
+# the topic cards on the welcome page and which pages appear in search.
+# To add a page: create the .md file in /documentation, then list it here.
+#
+#   title       — label shown in the menu
+#   url         — the page's address (the .md file name with .html)
+#   icon        — one of the icons in _includes/icon.html
+#   description — one line used on the welcome page cards and for search engines
+#   children    — optional links to sections within the page (#anchor names)
+
+- group: Getting started
+  items:
+    - title: Welcome
+      url: /documentation/
+      icon: home
+      description: How to contact Labtrac Support and get Labtrac installed.
+      children:
+        - title: Contacting Support
+          url: /documentation/#labtracsupport
+        - title: Installing Labtrac
+          url: /documentation/#install
+
+    - title: What's New in Labtrac?
+      url: /documentation/new-features.html
+      icon: sparkles
+      description: The new features in the latest version of Labtrac.
+
+    - title: Setup
+      url: /documentation/setup.html
+      icon: rocket
+      description: Getting started — adding your dentists, products, materials and jobs.
+      children:
+        - title: Getting Started
+          url: /documentation/setup.html#gettingstarted
+        - title: Adding Dentists
+          url: /documentation/setup.html#addingdentists
+        - title: Adding Products
+          url: /documentation/setup.html#addingproducts
+        - title: Adding Materials
+          url: /documentation/setup.html#addingmaterials
+        - title: Adding a Job
+          url: /documentation/setup.html#addingjobs
+
+- group: Using Labtrac
+  items:
+    - title: System Settings
+      url: /documentation/system-settings.html
+      icon: settings
+      description: Customise the way Labtrac will work for you.
+      children:
+        - title: Lab Details
+          url: /documentation/system-settings.html#labdetails
+        - title: System Options
+          url: /documentation/system-settings.html#systemoptions
+        - title: Dentist Defaults
+          url: /documentation/system-settings.html#dentist
+        - title: Financial
+          url: /documentation/system-settings.html#financial
+        - title: Order Enclosures
+          url: /documentation/system-settings.html#orderenclosures
+        - title: Footnotes
+          url: /documentation/system-settings.html#footnotes
+        - title: User Manager
+          url: /documentation/system-settings.html#usermanager
+        - title: Diary
+          url: /documentation/system-settings.html#diary
+
+    - title: Invoicing and Statements
+      url: /documentation/invoicing-statements.html
+      icon: invoice
+      description: Invoices, statements, end of month, CRM Studio and exports.
+      children:
+        - title: Invoice List
+          url: /documentation/invoicing-statements.html#invoicelist
+        - title: Statement Manager
+          url: /documentation/invoicing-statements.html#statementmanager
+        - title: Account Activity
+          url: /documentation/invoicing-statements.html#accountactivity
+        - title: End of Month Guide
+          url: /documentation/invoicing-statements.html#endofmonth
+        - title: CRM Studio and MyDentist Invoicing
+          url: /documentation/invoicing-statements.html#crm
+        - title: Invoice Export
+          url: /documentation/invoicing-statements.html#invoiceexport
+        - title: Backup Module
+          url: /documentation/invoicing-statements.html#backup
+
+    - title: Payment Entry
+      url: /documentation/payment-entry.html
+      icon: payment
+      description: Entering and reversing payments and credit notes.
+      children:
+        - title: Entering a Payment
+          url: /documentation/payment-entry.html#paymententry
+        - title: Reversing a Payment
+          url: /documentation/payment-entry.html#reversepayment
+
+    - title: Pricing Wizards
+      url: /documentation/pricing-wizards.html
+      icon: tag
+      description: Update prices for numerous products or a whole price list at once.
+      children:
+        - title: Product Pricing Wizard
+          url: /documentation/pricing-wizards.html#ProductWiz
+        - title: Material Pricing Wizard
+          url: /documentation/pricing-wizards.html#MaterialWiz
+
+    - title: Reports
+      url: /documentation/reports.html
+      icon: chart
+      description: Every report in the Reports Package and what it shows.
+
+    - title: Labtrac Online
+      url: /documentation/online.html
+      icon: cloud
+      description: Work on the go — view cases, dentists and inventory online.
+
+- group: Help
+  items:
+    - title: Videos
+      url: /documentation/videos.html
+      icon: play
+      description: Video walkthroughs of the most common tasks.
+
+    - title: Frequently Asked Questions
+      url: /documentation/faqs.html
+      icon: help
+      description: Answers to the questions our support team are regularly asked.

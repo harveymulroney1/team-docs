@@ -1,75 +1,46 @@
-<div class="fixer">
-<div id="header"></div>
-<ul class="list-unstyled" id="contents">
-	<li>
-		<a data-toggle="collapse" class="{% if page.title != "Welcome" %}collapsed{%endif%}" href="#welcome"><i class="fa fa-chevron-up fa-flip-vertical"></i></a>
-		<a href="../documentation">Welcome</a>
-		<ul id="welcome" class="collapse {% if page.title == "Welcome" %}in{% endif %}">
-			<li>
-				<a href="#install">Installing Labtrac</a>
-			</li>
-		</ul>
-	</li>
-	
-	<li><a href="new-features">Whats New in Labtrac?</a></li>
-	
-	<li>
-	
-		<a data-toggle="collapse" class="{% if page.title != "Setup" %}collapsed{%endif%}" href="#set"><i class="fa fa-chevron-up fa-flip-vertical"></i></a>
-		<a href="setup">Setup</a>
-		<ul id="set" class="collapse{% if page.title == "Getting Started" %}in{%endif%}">
-				<li><a href="setup#gettingstarted">Getting Started</a></li>
-				<li><a href="setup#addingdentists">Adding Dentists</a></li>
-				<li><a href="setup#addingproducts">Adding Products</a></li>
-				<li><a href="setup#addingmaterials">Adding Materials</a></li>
-				<li><a href="setup#addingjobs">Adding a Job</a></li>
-			</ul>
-	</li>
-	
-	<li>
-		<a data-toggle="collapse" class="{% if page.title != "System Settings" %}collapsed{%endif%}" href="#sysset"><i class="fa fa-chevron-up fa-flip-vertical"></i></a>
-		<a href="system-settings">System Settings</a>
-		<ul class="collapse {% if page.title == "System Settings" %}in{%endif%}" id="sysset">
-			<li><a href="system-settings#labdetails">Lab Details</a></li>
-			<li><a href="system-settings#systemoptions">System Options</a></li>
-			<li><a href="system-settings#dentist">Dentist Defaults</a></li>
-			<li><a href="system-settings#financial">Financial</a></li>
-			<li><a href="system-settings#orderenclosures">Order Enclosures</a></li>
-			<li><a href="system-settings#footnotes">Footnotes</a></li>
-			<li><a href="system-settings#usermanager">User Manager</a></li>
-			<li><a href="system-settings#diary">Diary</a></li>
-		</ul>
-	</li>
-	
-	<li>
-		<a data-toggle="collapse" class="{% if page.title != "Invoicing and Statements" %}collapsed{%endif%}" href="#invsta"><i class="fa fa-chevron-up fa-flip-vertical"></i></a>
-		<a href="invoicing-statements">Invoicing and Statements</a>
-		<ul id="invsta" class="collapse {% if page.title == "Invoicing and Statements" %}in{%endif%}">
-			<li><a href="invoicing-statements#invoicelist">Invoice List</a></li>
-			<li><a href="invoicing-statements#invoicemanager">Invoice Manager</a></li>
-			<li><a href="invoicing-statements#statementmanager">Statement Manager</a></li>
-			<li><a href="invoicing-statements#accountactivity">Account Activity</a></li>
-			<li><a href="invoicing-statements#endofmonth">End of Month Guide</a></li>
-			<li><a href="invoicing-statements#crm">CRM Studio and MyDentist Invoicing</a></li>
-			<li><a href="invoicing-statements#invoiceexport">Invoice Export</a></li>
-			<li><a href="invoicing-statements#backup">Backup Module</a></li>
-		</ul>
-	</li>
+<aside class="sidebar" id="site-sidebar" aria-label="Documentation menu">
+  <div class="sidebar-inner">
+    <nav class="sidebar-nav">
+      {%- assign nav_sub_id = 0 -%}
+      {%- for group in site.data.navigation %}
+      <div class="nav-group">
+        <p class="nav-group-title">{{ group.group }}</p>
+        <ul class="nav-list">
+          {%- for item in group.items -%}
+          {%- assign is_current = false -%}
+          {%- if page.url == item.url -%}{%- assign is_current = true -%}{%- endif -%}
+          {%- assign nav_sub_id = nav_sub_id | plus: 1 %}
+          <li class="nav-item{% if is_current %} is-current{% endif %}{% if item.children %} has-children{% endif %}">
+            <div class="nav-row">
+              <a class="nav-link" href="{{ item.url | relative_url }}"{% if is_current %} aria-current="page"{% endif %}>
+                {% include icon.html name=item.icon %}<span>{{ item.title }}</span>
+              </a>
+              {%- if item.children %}
+              <button class="nav-toggle" type="button" aria-expanded="{{ is_current }}" aria-controls="nav-sub-{{ nav_sub_id }}">
+                {% include icon.html name="chevron-down" %}<span class="visually-hidden">Sections in {{ item.title }}</span>
+              </button>
+              {%- endif %}
+            </div>
+            {%- if item.children %}
+            <ul class="nav-sub" id="nav-sub-{{ nav_sub_id }}"{% unless is_current %} hidden{% endunless %}>
+              {%- for child in item.children %}
+              <li><a class="nav-sublink" href="{{ child.url | relative_url }}">{{ child.title }}</a></li>
+              {%- endfor %}
+            </ul>
+            {%- endif %}
+          </li>
+          {%- endfor %}
+        </ul>
+      </div>
+      {%- endfor %}
+    </nav>
 
-		<li>
-		<a data-toggle="collapse" class="{% if page.title != "Payment Entry" %}collapsed{%endif%}" href="#payent"><i class="fa fa-chevron-up fa-flip-vertical"></i></a>
-		<a href="payment-entry">Payment Entry</a>
-		<ul id="payent" class="collapse {% if page.title == "Payment Entry" %}in{%endif%}">
-			<li><a href="payment-entry#paymententry">Entering a Payment</a></li>
-			<li><a href="payment-entry#reversepayment">Reversing a Payment</a></li>
-		</ul>
-	</li>
-	</li>
-
-	<li><a href="online">Online</a></li>
-	<li><a href="pricing-wizards">Pricing Wizards</a></li>
-	<li><a href="reports">Reports</a></li>
-	<li><a href="videos">Videos</a></li>
-	<li><a href="faqs">Frequently Asked Questions</a></li>
-</ul>
-</div>
+    <div class="sidebar-help">
+      <p class="sidebar-help-title">Need a hand?</p>
+      <a href="mailto:{{ site.support.email }}">{% include icon.html name="mail" %}<span>{{ site.support.email }}</span></a>
+      <a href="tel:{{ site.support.phone_link }}">{% include icon.html name="phone" %}<span>{{ site.support.phone }}</span></a>
+      <p class="sidebar-help-hours">{% include icon.html name="clock" %}<span>{% for line in site.support.hours %}<span>{{ line }}</span>{% endfor %}</span></p>
+    </div>
+  </div>
+</aside>
+<div class="sidebar-backdrop" data-sidebar-close hidden></div>

@@ -1,0 +1,21 @@
+---
+layout: null
+sitemap: false
+---
+{%- comment -%}
+  Search index for the documentation, used by javascripts/docs.js.
+  It includes every page listed in _data/navigation.yml.
+{%- endcomment -%}
+[
+{%- assign search_first = true -%}
+{%- for group in site.data.navigation -%}
+{%- for item in group.items -%}
+{%- assign search_page = site.pages | where: "url", item.url | first -%}
+{%- if search_page -%}
+{%- unless search_first %},{% endunless %}
+{"title":{{ item.title | jsonify }},"url":{{ item.url | relative_url | jsonify }},"html":{{ search_page.content | markdownify | jsonify }}}
+{%- assign search_first = false -%}
+{%- endif -%}
+{%- endfor -%}
+{%- endfor %}
+]
